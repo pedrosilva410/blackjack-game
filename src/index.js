@@ -13,14 +13,19 @@ let isAlive = true;
 startGameButton.addEventListener("click", startGame);
 newCardButton.addEventListener("click", drawCard)
 
-
-function randomIntFromInterval(min, max) { // min and max included 
-	return Math.floor(Math.random() * (max - min + 1) + min)
+function randomCard() {
+	let randomCard = Math.floor(Math.random() * 13) + 1
+	if (randomCard === 1) {
+		return 11
+	} else if (randomCard >= 11) {
+		return 10
+	}
+	else return randomCard
 }
 
 function startGame() {
-	let firstCard = randomIntFromInterval(2, 11);
-	let secondCard = randomIntFromInterval(2, 11);
+	let firstCard = randomCard();
+	let secondCard = randomCard();
 	let message = "";
 	let hasBlackJack = false;
 	let isAlive = true;
@@ -48,7 +53,7 @@ function startGame() {
 }
 
 function drawCard() {
-	let newCard = randomIntFromInterval(2, 11);
+	let newCard = randomCard();
 	sum = sum + newCard
 
 	if (sum < 21) {
