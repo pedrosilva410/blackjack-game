@@ -33,6 +33,7 @@ function startGame() {
 		message = "Do you want to draw a new card?";
 	} else if (sum === 21) {
 		message = "You've got Blackjack!";
+		newCardButton.style.visibility = "hidden"
 		hasBlackJack = true;
 	} else {
 		isAlive = false;
@@ -54,6 +55,7 @@ function drawCard() {
 		message = "Do you want to draw a new card?";
 	} else if (sum === 21) {
 		message = "You've got Blackjack!";
+		newCardButton.style.visibility = "hidden"
 		hasBlackJack = true;
 	} else {
 		isAlive = false;
